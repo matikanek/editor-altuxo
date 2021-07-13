@@ -1,0 +1,87 @@
+<p class="properties__heading">Właściwości:</p>
+<div class="properties__items" *ngIf="isImage == false">
+  <div class="properties__items-item">
+    <p>Font: </p>
+    <nz-select (ngModelChange)="changeFont($event)" ngModel={{currentElementFont}}
+      *ngIf="currentElementExist == true"
+    >
+      <nz-option *ngFor="let item of availableFonts; index as i"
+        nzValue={{availableFonts[i]}} nzLabel={{availableFonts[i]}}>
+      </nz-option>
+    </nz-select>
+    <nz-select (ngModelChange)="changeFont($event)" ngModel={{currentElementFont}} nzDisabled
+      *ngIf="currentElementExist == false"
+    >
+      <nz-option *ngFor="let item of availableFonts; index as i"
+        nzValue={{availableFonts[i]}} nzLabel={{availableFonts[i]}}>
+      </nz-option>
+    </nz-select>
+  </div>
+  <div class="properties__items-item">
+    <p>Weight: </p>
+    <nz-select (ngModelChange)="changeWeight($event)" ngModel={{currentElementWeight}}
+      *ngIf="currentElementExist == true"
+    >
+      <nz-option *ngFor="let item of availableWeights; index as i"
+        nzValue={{availableWeights[i]}} nzLabel={{availableWeights[i]}}>
+      </nz-option>
+    </nz-select>
+    <nz-select (ngModelChange)="changeWeight($event)" ngModel={{currentElementWeight}} nzDisabled
+      *ngIf="currentElementExist == false"
+    >
+      <nz-option *ngFor="let item of availableWeights; index as i"
+        nzValue={{availableWeights[i]}} nzLabel={{availableWeights[i]}}>
+      </nz-option>
+    </nz-select>
+  </div>
+  <div class="properties__items-item">
+    <p>Size: </p>
+    <nz-select (ngModelChange)="changeSize($event)" ngModel={{currentElementSize}}
+      *ngIf="currentElementExist == true"
+    >
+      <nz-option *ngFor="let item of availableSizes; index as i"
+        nzValue={{availableSizes[i]}} nzLabel={{availableSizes[i]}}>
+      </nz-option>
+    </nz-select>
+    <nz-select (ngModelChange)="changeSize($event)" ngModel={{currentElementSize}} nzDisabled
+      *ngIf="currentElementExist == false"
+    >
+      <nz-option *ngFor="let item of availableSizes; index as i"
+        nzValue={{availableSizes[i]}} nzLabel={{availableSizes[i]}}>
+      </nz-option>
+    </nz-select>
+  </div>
+  <div class="properties__items-item">
+    <color-sketch [color]="currentElementColor" (onChangeComplete)="changeColor($event)"></color-sketch>
+  </div>
+</div>
+<div class="properties__items" *ngIf="isImage == true">
+  <p>
+    Image URL: {{urlImage}}
+  </p>
+  <p>
+    Coords: X = {{urlXCoord}}, Y = {{urlYCoord}}
+  </p>
+  <div class="properties__items-coords">
+    <p>
+      Width: 
+      <input 
+        class="properties__items-coordinate" 
+        nz-input 
+        placeholder="Image width" 
+        [(ngModel)]="urlWidth"
+        (ngModelChange)="changeImageWidth(urlWidth)"
+      />
+    </p>
+    <p>
+      Height: 
+      <input 
+        class="properties__items-coordinate" 
+        nz-input 
+        placeholder="Image width" 
+        [(ngModel)]="urlHeight" 
+        (ngModelChange)="changeImageHeight(urlHeight)"
+      />
+    </p>
+  </div>
+</div>

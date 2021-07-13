@@ -1,0 +1,17 @@
+:host {
+  width: 400px;
+}
+
+.example-tree-node {
+  display: flex;
+  align-items: center;
+}
+
+.structure__active-element {
+  background-color: rgb(204, 233, 255);
+}
+
+.structure__heading {
+  font-size: 24px;
+  text-decoration: underline;
+}

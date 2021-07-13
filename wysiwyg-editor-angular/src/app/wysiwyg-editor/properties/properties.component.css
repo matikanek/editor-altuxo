@@ -1,0 +1,35 @@
+:host {
+  width: 400px;
+  padding: 0px 20px;
+}
+
+nz-select {
+  margin: 0 8px 10px 0;
+  width: 120px;
+}
+
+.properties__heading {
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+.properties__items-item {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  width: 180px;
+  justify-content: space-between;
+}
+
+.properties__items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.properties__items-coordinate {
+  width: 100px;
+}
+
+.properties__items-coords {
+  display: flex;
+}

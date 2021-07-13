@@ -1,0 +1,23 @@
+<editor
+  apiKey="iuchk2hnncku9keuhlumh5ym7rr77r4f7rjgca1u8jqj0e5x"
+  (onClick)="onChange($event)"
+  [formControl]="contentControl"
+    [init]="{
+      height: 800,
+      width: 1000,
+      menubar: false,
+      plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table paste code help wordcount'
+      ],
+      toolbar:
+        'undo redo | formatselect | bold italic backcolor forecolor | \
+        alignleft aligncenter alignright alignjustify | \
+        bullist numlist outdent indent | removeformat | \
+        image table',
+      image_list: [
+        {title: 'altuxo', value: './assets/altuxo.png'},
+      ]
+    }"
+></editor>
